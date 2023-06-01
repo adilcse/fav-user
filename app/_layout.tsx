@@ -8,14 +8,16 @@ import {
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import React from "react";
+import { PersistGate } from 'redux-persist/integration/react';
+import { PaperProvider } from 'react-native-paper';
 import { useEffect } from "react";
 import { useColorScheme } from "react-native";
-import store from "../redux/store";
+import store, {persistor} from "../redux/store";
 import LoginScreen from "./login";
 
 export const unstable_settings = {
   // Ensure any route can link back to `/`
-  initialRouteName: "",
+  initialRouteName: "home",
 };
 
 export {
@@ -39,7 +41,11 @@ export default function RootLayout() {
       {!loaded && <SplashScreen />}
       {loaded && (
         <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+          <PaperProvider>
           <RootLayoutNav />
+          </PaperProvider>
+          </PersistGate>
         </Provider>
       )}
     </>
@@ -49,7 +55,6 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
   const isLoggedIn = useSelector((state: any) => state?.login?.isLoggedIn);
-  console.log(isLoggedIn)
   if (!isLoggedIn) {
   return (
     <LoginScreen />
@@ -58,7 +63,7 @@ function RootLayoutNav() {
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
-          <Stack.Screen name="home" options={{ headerShown: false }} />
+        <Stack.Screen name="home" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );
