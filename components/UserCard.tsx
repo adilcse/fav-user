@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, useColorScheme } from 'react-native';
 import { Image } from 'react-native-expo-image-cache';
 import { Feather } from '@expo/vector-icons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { User } from './UserScrollViewHome';
 import TruncatedText from './TruncatedText';
+import Colors from '../constants/Colors';
 
 interface UserCardRowProps {
   user: User;
@@ -12,6 +13,7 @@ interface UserCardRowProps {
 }
 
 const UserCardRow: React.FC<UserCardRowProps> = ({ user, onPress }) => {
+  const colorScheme = useColorScheme();
   return (
     <View style={styles.container}>
         <Image uri={user.image} style={styles.image} />
@@ -25,8 +27,8 @@ const UserCardRow: React.FC<UserCardRowProps> = ({ user, onPress }) => {
       </View>
       <TouchableOpacity style={styles.iconButton} onPress={onPress}>
         {user.isFavorite ?
-        <FontAwesome size={24} color="#000" name="star" />
-        :<Feather size={24} color="#000" name="star" />
+        <FontAwesome size={24} color={Colors[colorScheme ?? "light"].tint} name="star" />
+        :<Feather size={24} color={Colors[colorScheme ?? "light"].tint} name="star" />
 
 }
       </TouchableOpacity>
