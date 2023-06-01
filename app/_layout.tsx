@@ -62,7 +62,7 @@ function RootLayoutNav() {
   }
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack initialRouteName="home">
         <Stack.Screen name="home" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>

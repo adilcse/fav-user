@@ -23,17 +23,6 @@ function TabBarIcon(props: {
 }) {
   return (
     <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />
-
-    // <View>
-    //   <Text>
-    //   <FontAwesome size={28} style={{ marginBottom: -3, }} {...props}  />
-    //   </Text>
-    // {props.badgeCount && props.badgeCount > 0 && (
-    //   <Text style={styles.badge}>
-    //     {props.badgeCount}
-    //   </Text>
-    // )}
-    // </View>
   );
 }
 
@@ -65,7 +54,6 @@ export default function TabLayout() {
           title: "Favorite",
           tabBarIcon: ({ color }) => (
             <View>
-              {/* <TabBarIcon name="star" color={color} /> */}
               <IconButton icon={"star"} iconColor={color} size={30} />
               {badgeCount > 0 && (
                 <Badge

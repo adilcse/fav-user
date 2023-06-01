@@ -27,7 +27,6 @@ const UserScrollViewHome: React.FC = () => {
       .catch((error) => console.error(error))
       .finally(() => setRefreshing(false));
   };
-  console.log(users)
 
   useEffect(() => {
     fetchUsers();
