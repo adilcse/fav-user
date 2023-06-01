@@ -15,7 +15,7 @@ import LoginScreen from "./login";
 
 export const unstable_settings = {
   // Ensure any route can link back to `/`
-  initialRouteName: "login",
+  initialRouteName: "",
 };
 
 export {
@@ -51,14 +51,14 @@ function RootLayoutNav() {
   const isLoggedIn = useSelector((state: any) => state?.login?.isLoggedIn);
   console.log(isLoggedIn)
   if (!isLoggedIn) {
-  return (<Stack>
-    <Stack.Screen name="login" options={{ headerShown: false }} />
-    </Stack>)
+  return (
+    <LoginScreen />
+    )
   }
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="home" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );

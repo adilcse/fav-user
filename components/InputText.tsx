@@ -5,10 +5,12 @@ import { Feather } from '@expo/vector-icons';
 interface InputTextProps {
   icon: string;
   placeholder: string;
-  style?: object
+  style?: object;
+  value: string;
+  onChange: (text: string) => void;
 }
 
-const InputText: React.FC<InputTextProps> = ({ icon, placeholder, style }) => {
+const InputText: React.FC<InputTextProps> = ({ icon, placeholder, style, value, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
   const barWidth = new Animated.Value(0);
 
@@ -50,6 +52,8 @@ const InputText: React.FC<InputTextProps> = ({ icon, placeholder, style }) => {
         placeholder={placeholder}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        value={value}
+        onChangeText={onChange}
       />
       <Animated.View style={[styles.bar, animatedBarStyles]} />
     </View>

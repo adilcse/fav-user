@@ -1,14 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Platform, StyleSheet, Image } from 'react-native';
 import Card from '../components/Card';
 
 import InputText from '../components/InputText';
 import MyButton from '../components/MyButton';
 import { Text, View } from '../components/Themed';
+import { loginFailure, loginSuccess } from '../redux/reducers/loginReducer';
+import { useAppDispatch } from '../redux/store';
 const appLogo = require("../assets/images/app-logo.png");
 export default function LoginScreen() {
   const [isInputValid, setIsInputValid] = React.useState(false);
+  const login = useSelector((state: any) => state?.login);
+  const dispatch = useAppDispatch();
+
+  const [value, setValue] = useState({
+    email: '',
+    password: ''
+  });
+
+  useEffect(() => {
+    if (value.email && value.password) {
+      setIsInputValid(true);
+    }
+  }, [value]);
+
+  const tryLogin = () => {
+    if (value.email === 'reactnative@jetdevs.com' && value.password == 'jetdevs@123') {
+      dispatch(loginSuccess({
+          email: value.email
+      }));
+    } else {
+      dispatch(loginFailure({
+        message: 'Email or password invalid'
+    }));
+    }
+  }
+  
   return (
     <View style={styles.container}>
       <Card style={styles.card}>
@@ -18,9 +47,15 @@ export default function LoginScreen() {
 
       <Text style={styles.title}>LOGIN</Text>
       <View style={styles.textContainer}>
-        <InputText style={styles.email} icon="user" placeholder='Enter Email'/>
-        <InputText style={styles.email} icon="lock" placeholder='Enter Password'/>
-        <MyButton title='LOGIN'  onPress={() => console.log("logging in")} style={styles.button}
+        <InputText value={value.email}
+          onChange={(text) => setValue({...value, email: text})}
+          style={styles.email} icon="user" placeholder='Enter Email'/>
+        <InputText
+        onChange={(text) => setValue({...value, password: text})}
+        value={value.password} style={styles.email} icon="lock" placeholder='Enter Password'/>
+        {login.error?.message && 
+        <Text style={styles.error}>{login.error.message}</Text>}
+        <MyButton title='LOGIN'  onPress={tryLogin} style={styles.button}
          disabled={!isInputValid} />
       </View>
 
@@ -79,5 +114,9 @@ const styles = StyleSheet.create({
   },
   button: {
     width: "80%"
+  },
+  error: {
+    marginVertical: 10,
+    color: "red"
   }
 });
