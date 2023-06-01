@@ -1,23 +1,17 @@
 import { Provider, useSelector } from "react-redux";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
+import { DarkTheme, DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
+import React, { useEffect } from "react";
 import { SplashScreen, Stack } from "expo-router";
-import React from "react";
-import { PersistGate } from 'redux-persist/integration/react';
-import { PaperProvider } from 'react-native-paper';
-import { useEffect } from "react";
+import { PersistGate } from "redux-persist/integration/react";
+import { PaperProvider } from "react-native-paper";
 import { useColorScheme } from "react-native";
-import store, {persistor} from "../redux/store";
-import LoginScreen from "./login";
+import store, { persistor } from "../redux/store";
 
 export const unstable_settings = {
-  // Ensure any route can link back to `/`
-  initialRouteName: "home",
+  // Ensure that reloading on `/modal` keeps a back button present.
+  initialRouteName: 'login',
 };
 
 export {
@@ -31,7 +25,6 @@ export default function RootLayout() {
     ...FontAwesome.font,
   });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;
   }, [error]);
@@ -42,9 +35,9 @@ export default function RootLayout() {
       {loaded && (
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-          <PaperProvider>
-          <RootLayoutNav />
-          </PaperProvider>
+            <PaperProvider>
+              <RootLayoutNav />
+            </PaperProvider>
           </PersistGate>
         </Provider>
       )}
@@ -54,17 +47,11 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
-  const isLoggedIn = useSelector((state: any) => state?.login?.isLoggedIn);
-  if (!isLoggedIn) {
-  return (
-    <LoginScreen />
-    )
-  }
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="home" options={{ headerShown: false }} />
+      <Stack initialRouteName="login">
         <Stack.Screen name="login" options={{ headerShown: false }} />
+       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );

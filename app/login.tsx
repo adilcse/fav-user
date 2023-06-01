@@ -17,7 +17,7 @@ export default function LoginScreen() {
   const router = useRouter();
   useEffect(() => {
     if (isLoggedIn) {
-      router.replace("/home")
+      router.replace("(tabs)")
     }
   }, [isLoggedIn])
   const dispatch = useDispatch();

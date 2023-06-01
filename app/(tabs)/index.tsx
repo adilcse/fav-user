@@ -5,7 +5,7 @@ import { StyleSheet, Platform } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import UserScrollViewHome from '../../components/UserScrollViewHome';
 
-export default function TabOneScreen() {
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
        <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />

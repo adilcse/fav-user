@@ -1,7 +1,7 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Tabs } from "expo-router";
+import { Tabs, useRouter } from "expo-router";
 import { IconButton, Badge } from "react-native-paper";
-import React from "react";
+import React, {useEffect} from "react";
 import {
   Pressable,
   useColorScheme,
@@ -13,6 +13,8 @@ import {
 import Colors from "../../constants/Colors";
 import { useSelector } from "react-redux";
 const appLogo = require("../../assets/images/app-logo.png");
+
+
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -29,6 +31,13 @@ function TabBarIcon(props: {
 export default function TabLayout() {
   const colorScheme = useColorScheme();
   const favUsers = useSelector((state: any) => state.favorite?.users);
+  const isLoggedIn = useSelector((state: any) => state?.login?.isLoggedIn);
+  const router = useRouter();
+  // useEffect(() => {
+  //   if (!isLoggedIn) {
+  //     router.replace("login")
+  //   }
+  // }, [isLoggedIn])
   const badgeCount = favUsers?.length || 0;
   return (
     <Tabs
