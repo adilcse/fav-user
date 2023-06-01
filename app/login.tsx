@@ -49,9 +49,10 @@ export default function LoginScreen() {
       <View style={styles.textContainer}>
         <InputText value={value.email}
           onChange={(text) => setValue({...value, email: text})}
-          style={styles.email} icon="user" placeholder='Enter Email'/>
+          style={styles.email} icon="email" placeholder='Enter Email'/>
         <InputText
         onChange={(text) => setValue({...value, password: text})}
+        isSecureText
         value={value.password} style={styles.email} icon="lock" placeholder='Enter Password'/>
         {login.error?.message && 
         <Text style={styles.error}>{login.error.message}</Text>}

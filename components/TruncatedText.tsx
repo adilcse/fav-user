@@ -19,9 +19,6 @@ interface TruncatedTextProps {
   
   const styles = StyleSheet.create({
     truncatedText: {
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
     },
   });
   
