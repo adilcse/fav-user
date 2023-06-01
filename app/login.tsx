@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Platform, StyleSheet, Image } from 'react-native';
 import Card from '../components/Card';
 
@@ -8,12 +8,19 @@ import InputText from '../components/InputText';
 import MyButton from '../components/MyButton';
 import { Text, View } from '../components/Themed';
 import { loginFailure, loginSuccess } from '../redux/reducers/loginReducer';
-import { useAppDispatch } from '../redux/store';
+import { useRouter } from 'expo-router';
 const appLogo = require("../assets/images/app-logo.png");
 export default function LoginScreen() {
   const [isInputValid, setIsInputValid] = React.useState(false);
   const login = useSelector((state: any) => state?.login);
-  const dispatch = useAppDispatch();
+  const isLoggedIn = useSelector((state: any) => state?.login?.isLoggedIn);
+  const router = useRouter();
+  useEffect(() => {
+    if (isLoggedIn) {
+      router.replace("/home")
+    }
+  }, [isLoggedIn])
+  const dispatch = useDispatch();
 
   const [value, setValue] = useState({
     email: '',

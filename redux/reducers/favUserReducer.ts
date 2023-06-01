@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { User } from '../../components/UserScrollViewHome';
 
 
 const initialState = {
@@ -10,7 +11,6 @@ const favUserSlice = createSlice({
   initialState,
   reducers: {
     addFav: (state, action) => {
-      console.log(action)
       state.users = [...state.users, action.payload];
     },
     removeFav: (state, action) => {

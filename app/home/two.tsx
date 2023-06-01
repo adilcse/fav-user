@@ -1,22 +1,22 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Platform, ScrollView } from 'react-native';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { View, Text } from '../../components/Themed';
 import UserCardRow from '../../components/UserCard';
-import { useAppDispatch } from '../../redux/store';
 import { addFav, removeFav } from '../../redux/reducers/favUserReducer';
+import { User } from '../../components/UserScrollViewHome';
 
 export default function TabTwoScreen() {
   const favUsers = useSelector((state: any) => state.favorite?.users);
-  const dispatch = useAppDispatch()
+  const dispatch = useDispatch()
   return (
     <View style={styles.container}>
     <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     <View style={styles.container}>
       {favUsers?.length ? <ScrollView
       >
-        {favUsers.map((user: any, index: number) => (
+        {favUsers.map((user: User, index: number) => (
           <UserCardRow key={user.id} user={user} onPress={() => user.isFavorite ? dispatch(removeFav(user)):dispatch(addFav(user))} />
         ))}
         

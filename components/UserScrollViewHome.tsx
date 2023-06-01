@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, StyleSheet, RefreshControl } from 'react-native';
 import UserCardRow from './UserCard';
-import {useSelector} from 'react-redux';
-import { useAppDispatch } from '../redux/store';
+import {useDispatch, useSelector} from 'react-redux';
 import { addFav, removeFav } from '../redux/reducers/favUserReducer';
 
 export interface User {
@@ -17,7 +16,7 @@ const UserScrollViewHome: React.FC = () => {
   const [users, setUsers] = useState([]);
   const [updatedUser, setUpdatedUser] = useState<User[]>([])
   const [refreshing, setRefreshing] = useState(false);
-  const dispatch = useAppDispatch()
+  const dispatch = useDispatch()
   const favUsers = useSelector((state: any) => state.favorite?.users);
   const fetchUsers = () => {
     setRefreshing(true);
