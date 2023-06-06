@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, StyleSheet, RefreshControl } from 'react-native';
+import { View, ScrollView, StyleSheet, RefreshControl, Text } from 'react-native';
 import UserCardRow from './UserCard';
 import {useDispatch, useSelector} from 'react-redux';
 import { addFav, removeFav } from '../redux/reducers/favUserReducer';
@@ -49,7 +49,10 @@ const UserScrollViewHome: React.FC = () => {
           <RefreshControl refreshing={refreshing} onRefresh={fetchUsers} />
         }
       >
-        {updatedUser.map((user, index) => (
+        {refreshing ? <Text>
+          Loading
+        </Text>:
+        updatedUser.map((user, index) => (
           <UserCardRow key={index} user={user} onPress={() => user.isFavorite ? dispatch(removeFav({
             ...user,
             isFavorite: false

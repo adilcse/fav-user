@@ -1,5 +1,5 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Tabs, useRouter } from "expo-router";
+import { Tabs, useNavigation, useRouter } from "expo-router";
 import { IconButton, Badge } from "react-native-paper";
 import React, {useEffect} from "react";
 import {
@@ -32,12 +32,22 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
   const favUsers = useSelector((state: any) => state.favorite?.users);
   const isLoggedIn = useSelector((state: any) => state?.login?.isLoggedIn);
-  const router = useRouter();
-  // useEffect(() => {
-  //   if (!isLoggedIn) {
-  //     router.replace("login")
-  //   }
-  // }, [isLoggedIn])
+  const navigation = useNavigation();
+  console.log({isLoggedIn})
+  useEffect(() => {
+    if (!isLoggedIn) {
+      console.log({"can go back": navigation.canGoBack()})
+      if (navigation.canGoBack()) {
+        setTimeout(() => {
+          navigation.reset({
+            index: 0,
+            routes: [
+              { name: 'login' },
+            ]})
+        })
+      }
+    }
+  }, [isLoggedIn])
   const badgeCount = favUsers?.length || 0;
   return (
     <Tabs

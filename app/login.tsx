@@ -7,20 +7,29 @@ import Card from '../components/Card';
 import InputText from '../components/InputText';
 import MyButton from '../components/MyButton';
 import { Text, View } from '../components/Themed';
-import { loginFailure, loginSuccess } from '../redux/reducers/loginReducer';
-import { useRouter } from 'expo-router';
+import { loginFailure, loginSuccess, logout } from '../redux/reducers/loginReducer';
+import { useNavigation, useRouter } from 'expo-router';
 const appLogo = require("../assets/images/app-logo.png");
 export default function LoginScreen() {
   const [isInputValid, setIsInputValid] = React.useState(false);
   const login = useSelector((state: any) => state?.login);
   const isLoggedIn = useSelector((state: any) => state?.login?.isLoggedIn);
-  const router = useRouter();
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  useEffect(()=> {
+    dispatch(logout())
+  }, []);
+  
   useEffect(() => {
     if (isLoggedIn) {
-      router.replace("(tabs)")
-    }
+      navigation.reset({
+        index: 0,
+        routes: [
+          { name: '(tabs)' },
+        ]})
+      }
   }, [isLoggedIn])
-  const dispatch = useDispatch();
 
   const [value, setValue] = useState({
     email: '',
