@@ -57,10 +57,10 @@ The app utilizes the following dependencies:
 - Additional information about the Random User API can be found at https://randomuser.me/.
 
 ## Screenshots
-![Login Screen](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181504.png?alt=media&token=35d9105c-9917-4b1b-90d3-ad609ba639a5)
-![Login Screen](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181516.png?alt=media&token=4d8b99b9-2b66-4893-9e35-cf9670b6022b)
-![Home Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181826.png?alt=media&token=da195c19-4e1d-478b-999a-338e5592f2fc)
-![Home Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181809.png?alt=media&token=696f8f58-702e-4ddf-8a21-649170f26bcd)
-![Home Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-182644.png?alt=media&token=0091b5ab-0479-4c21-b81f-d0ff5c9d376f&_gl=1*11o1fg0*_ga*NDk5MzQ5OTM3LjE2NjYwMDU2NTQ.*_ga_CW55HF8NVT*MTY4NjA1NjQ4My4yLjEuMTY4NjA1NjgzMC4wLjAuMA..)
-![Favorite Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181812.png?alt=media&token=f3b088c2-b396-4d80-8ed4-fe4d72931f1e)
-![Favorite Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181819.png?alt=media&token=6d2cf27f-e45d-45e1-9ba3-6fd54b4ef7ef)
+<img src="https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181504.png?alt=media&token=35d9105c-9917-4b1b-90d3-ad609ba639a5" alt="Login Screen" width="300px">
+<img src="https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181516.png?alt=media&token=4d8b99b9-2b66-4893-9e35-cf9670b6022b" width="300px" alt="Login Screen">
+<img src="https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181826.png?alt=media&token=da195c19-4e1d-478b-999a-338e5592f2fc" width="300px" alt="Home Tab">
+<img src="https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181809.png?alt=media&token=696f8f58-702e-4ddf-8a21-649170f26bcd" width="300px" alt="Home Tab">
+<img src="https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-182644.png?alt=media&token=0091b5ab-0479-4c21-b81f-d0ff5c9d376f" width="300px" alt="Home Tab">
+<img src="https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181812.png?alt=media&token=f3b088c2-b396-4d80-8ed4-fe4d72931f1e" width="300px" alt="Favorite Tab">
+<img src="https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181819.png?alt=media&token=6d2cf27f-e45d-45e1-9ba3-6fd54b4ef7ef" width="300px" alt="Favorite Tab">
