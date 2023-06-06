@@ -57,11 +57,10 @@ The app utilizes the following dependencies:
 - Additional information about the Random User API can be found at https://randomuser.me/.
 
 ## Screenshots
-![Login Screen](https://drive.google.com/file/d/11HsTk91uE5fbR7s24onWPDe59bz_EDi6/view?usp=drive_link)
-![Login Screen](https://drive.google.com/file/d/11KygfFTw78U7VP85PtpXZ3BmRqRW-4ep/view?usp=drive_link)
-![Home Tab](https://drive.google.com/file/d/117WrGrT34Eos5zsJgOkqVlqyy6Y-ekck/view?usp=drive_link)
-![Home Tab](https://drive.google.com/file/d/11Wewv6W0cMisklk3zlMiLp5bSE0N9vgF/view?usp=drive_link)
-![Home Tab](https://drive.google.com/file/d/1164vttNT4TstxBvkJnrplho5FUP59XI1/view?usp=drive_link)
-![Home Tab Loading](https://drive.google.com/file/d/10uebvJW8zF3Nw19na98RUvU6XapsZvdj/view?usp=drive_link)
-![Favorite Tab](https://drive.google.com/file/d/10zjxA7_h4-vfp8Z5s0qY4E2anVi0kcCT/view?usp=drive_link)
-![Favorite Tab](https://drive.google.com/file/d/10xNGnsa2PKZfFjC2iHQQXxCBvN7_u9oX/view?usp=drive_link)
+![Login Screen](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181504.png?alt=media&token=35d9105c-9917-4b1b-90d3-ad609ba639a5)
+![Login Screen](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181516.png?alt=media&token=4d8b99b9-2b66-4893-9e35-cf9670b6022b)
+![Home Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181826.png?alt=media&token=da195c19-4e1d-478b-999a-338e5592f2fc)
+![Home Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181809.png?alt=media&token=696f8f58-702e-4ddf-8a21-649170f26bcd)
+![Home Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-182644.png?alt=media&token=0091b5ab-0479-4c21-b81f-d0ff5c9d376f&_gl=1*11o1fg0*_ga*NDk5MzQ5OTM3LjE2NjYwMDU2NTQ.*_ga_CW55HF8NVT*MTY4NjA1NjQ4My4yLjEuMTY4NjA1NjgzMC4wLjAuMA..)
+![Favorite Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181812.png?alt=media&token=f3b088c2-b396-4d80-8ed4-fe4d72931f1e)
+![Favorite Tab](https://firebasestorage.googleapis.com/v0/b/chatwithchat2.appspot.com/o/Screenshot_20230606-181819.png?alt=media&token=6d2cf27f-e45d-45e1-9ba3-6fd54b4ef7ef)
